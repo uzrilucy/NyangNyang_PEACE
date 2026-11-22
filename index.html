@@ -239,6 +239,21 @@ html{scroll-padding-top:76px}@media(max-width:720px){html{scroll-padding-top:120
 .bgmnote{font-size:12.5px;color:var(--ink2);margin:10px 0 0}
 @media(max-width:720px){.bgmpanel{position:fixed;left:12px;right:12px;top:112px;width:auto}}
 
+/* 밤 전환 경고 */
+#warn{width:min(440px,92vw);border-radius:22px;padding:0;height:fit-content;max-height:92dvh}
+#warn .wbox{padding:26px 24px 22px;text-align:center}
+#warn .wico{width:56px;height:56px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:#221c30;color:#f4f1ff}
+#warn .wico svg{width:26px;height:26px}
+#warn h2{font-size:24px;margin-bottom:10px}
+#warn p{color:var(--ink2);font-size:15.5px;margin:0 0 14px}
+#warn p b{color:var(--accent)}
+#warn .wrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+#warn .btn{width:100%;padding:0 12px}
+#warn .btn.go{background:#221c30;color:#f4f1ff;border-color:#221c30}
+#warn .once{display:flex;justify-content:center;align-items:center;gap:8px;font-size:14px;color:var(--ink2);min-height:40px;cursor:pointer}
+#warn .once input{width:18px;height:18px;accent-color:var(--accent)}
+@media(max-width:760px){#warn{width:92vw;max-width:92vw;height:fit-content;max-height:92dvh;border-radius:22px}}
+
 /* 상세 시트 */
 /* 스포일러 장막 */
 .lockbtn{flex:none;display:flex;align-items:center;gap:6px;height:44px;padding:0 12px;border-radius:999px;border:1.5px dashed var(--accent);background:transparent;color:var(--accent);font-weight:700;font-size:14px;cursor:pointer}
@@ -518,7 +533,7 @@ footer p{margin:0;font-size:14px;opacity:.85}
 <section class="band" id="tags"><div class="wrap">
  <div class="folder"><span class="tab"><i></i>NAI 태그</span><div class="face2">
   <h2>이미지 태그 복사함</h2>
-  <p>버튼을 누르면 캐릭터 외형 태그가 통째로 복사된다. 구도, 배경, 퀄리티 태그는 넣지 않았으니 원하는 장면에 맞춰 붙이면 된다. 바스트 세트는 하의와 신발, 소품을 뺀 상반신용이다.</p>
+  <p>버튼을 누르면 캐릭터의 외형 태그가 통째로 복사된다. 바스트 세트에는 상반신 외형만 담았다.</p>
  </div></div>
  <div class="tagbar">
   <div class="seg" id="seg" role="group" aria-label="분류">
@@ -534,6 +549,13 @@ footer p{margin:0;font-size:14px;opacity:.85}
  <p>냥냥피스 해결사단 · SillyTavern용 시뮬레이션 봇 리메이크 설정집<br>캐릭터 이미지는 NovelAI로 만들었습니다 · 2026</p>
 </div></footer>
 
+<dialog id="warn" aria-labelledby="warnT" aria-describedby="warnD"><div class="wbox">
+ <div class="wico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 3.2A8.8 8.8 0 1 0 20.8 15 7.2 7.2 0 0 1 15.5 3.2Z"/></svg></div>
+ <h2 id="warnT">밤의 얼굴로 바꿀까요?</h2>
+ <p id="warnD">다크 모드가 아니에요. 밤의 얼굴에서는 <b>단원들의 정체와 숨긴 것</b>이 드러나요. 플레이하면서 직접 알아가고 싶다면 낮의 얼굴에 머물러 주세요.</p>
+ <label class="once"><input type="checkbox" id="warnOnce"> 이번 방문 동안 다시 묻지 않기</label>
+ <div class="wrow"><button class="btn" type="button" id="warnNo">아니요, 낮에 머물래요</button><button class="btn go" type="button" id="warnYes">네, 볼게요</button></div>
+</div></dialog>
 <dialog id="dlg" aria-labelledby="dlgName"><div class="sheet" id="sheet"></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -555,8 +577,18 @@ function setNight(on){
   if (dlg.open && cur) openSheet(cur);
   if (typeof BGM !== 'undefined') BGM.follow(on);
 }
-face.addEventListener('click', () => setNight(!root.classList.contains('night')));
-$('#flip').addEventListener('click', () => setNight(!root.classList.contains('night')));
+/* 밤으로 바꿀 때는 스포일러 경고를 거친다 */
+const warn = $('#warn'); let warnOk = false;
+function askNight(){
+  if (root.classList.contains('night')) { setNight(false); return; }
+  if (warnOk) { setNight(true); return; }
+  $('#warnOnce').checked = false; warn.showModal(); $('#warnNo').focus();
+}
+$('#warnYes').addEventListener('click', () => { if ($('#warnOnce').checked) warnOk = true; warn.close(); setNight(true); });
+$('#warnNo').addEventListener('click', () => warn.close());
+warn.addEventListener('click', e => { if (e.target === warn) warn.close(); });
+face.addEventListener('click', askNight);
+$('#flip').addEventListener('click', askNight);
 const isNight = () => root.classList.contains('night');
 
 /* 지도 */
@@ -686,7 +718,7 @@ function openSheet(id){
 document.addEventListener('click', e => {
   const o = e.target.closest('[data-open]'); if (o){ openSheet(o.dataset.open); return; }
   if (e.target.closest('[data-close]')) { dlg.close(); return; }
-  if (e.target.closest('[data-night]')) { setNight(true); return; }
+  if (e.target.closest('[data-night]')) { askNight(); return; }
   const cp = e.target.closest('[data-copy]'); if (cp){ const [id,i] = cp.dataset.copy.split('|'); copyTag(byId[id], +i); }
 });
 dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
