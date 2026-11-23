@@ -347,13 +347,107 @@ footer{background:var(--ink);color:var(--paper);padding:40px max(5vw,16px)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
 footer img{width:150px;height:auto}
 footer p{margin:0;font-size:14px;opacity:.85}
+
+.wk-grp{margin-top:44px}
+.wk-grp:first-of-type{margin-top:0}
+.wk-grp>h3{font-size:26px;margin-bottom:6px}
+.wk-grp>p{color:var(--ink2);max-width:52em;margin:0 0 16px}
+.wk-h4{font:700 18px/1.2 Hahmlet,serif;margin:26px 0 12px}
+.wk-fine{margin-top:10px!important;font-size:13.5px!important;color:var(--ink2)!important}
+.wk-day{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:d}
+.wk-day li{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 16px 16px}
+.wk-day li::after{content:"";position:absolute;right:-10px;top:50%;width:8px;height:8px;border-top:2px solid var(--line);border-right:2px solid var(--line);transform:translateY(-50%) rotate(45deg)}
+.wk-day li:last-child::after{display:none}
+.wk-t{display:inline-block;font:700 12px/1 'Noto Sans KR',sans-serif;letter-spacing:.14em;color:var(--paper);background:var(--ink);border-radius:999px;padding:5px 10px;margin-bottom:10px}
+.wk-day li:nth-child(4) .wk-t{background:#2b3156;color:#eef0fb}
+.wk-day b{display:block;font:700 18px/1.2 Hahmlet,serif;margin-bottom:4px}
+.wk-day p{margin:0;font-size:14.5px;color:var(--ink2)}
+.wk-slips{margin-bottom:16px}
+.wk-slip{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:22px 18px 16px;box-shadow:0 8px 16px -12px rgba(40,20,5,.5)}
+.wk-slip:nth-child(1){transform:rotate(-.8deg)}.wk-slip:nth-child(2){transform:rotate(.6deg)}.wk-slip:nth-child(3){transform:rotate(-.4deg)}
+.wk-pin{position:absolute;top:-7px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a8a,var(--accent) 55%,#7d1d16);box-shadow:0 3px 4px rgba(0,0,0,.35)}
+.wk-slip em{font-style:normal;font:800 22px/1 Hahmlet,serif;color:var(--accent)}
+.wk-slip b{display:block;font:700 18px/1.2 Hahmlet,serif;margin:6px 0 4px}
+.wk-slip p{margin:0;font-size:14.5px;color:var(--ink2)}
+.wk-odds{margin-bottom:16px}
+.wk-bar{display:flex;height:34px;border-radius:10px;overflow:hidden;margin:10px 0 12px;box-shadow:inset 0 0 0 1px var(--line)}
+.wk-seg{flex:var(--w) 0 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12px;white-space:nowrap;overflow:hidden}
+.wk-seg b{font:800 12.5px/1 'Noto Sans KR',sans-serif;margin:0!important;color:#fff!important;display:inline!important}
+.wk-seg em{font-style:normal;opacity:.85}
+.wk-g .wk-s0,.wk-key .wk-s0.g{background:#8a6c4c}
+.wk-g .wk-s0{background:#9a7a58}.wk-g .wk-s1{background:#c08a3e}.wk-g .wk-s2{background:#d0662e}.wk-g .wk-s3{background:#b8322a}.wk-g .wk-s4{background:#5a1d4a}
+.wk-n .wk-s0{background:#c08a3e}.wk-n .wk-s1{background:#7a6aa8}.wk-n .wk-s2{background:#2b3156}
+.wk-g .wk-s3 em,.wk-g .wk-s4 em,.wk-g .wk-s4 b,.wk-n .wk-s1 b,.wk-n .wk-s2 b{display:none!important}
+.wk-key{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.wk-key li{display:flex;align-items:baseline;gap:8px;font-size:14px;color:var(--ink2)}
+.wk-key li i{flex:none;width:10px;height:10px;border-radius:3px;transform:translateY(1px)}
+.wk-key li b{display:inline!important;font:700 14px/1.3 'Noto Sans KR',sans-serif!important;margin:0!important;color:var(--ink)}
+.wk-g+.wk-key .wk-s0{background:#9a7a58}.wk-g+.wk-key .wk-s1{background:#c08a3e}.wk-g+.wk-key .wk-s2{background:#d0662e}.wk-g+.wk-key .wk-s3{background:#b8322a}.wk-g+.wk-key .wk-s4{background:#5a1d4a}
+.wk-n+.wk-key .wk-s0{background:#c08a3e}.wk-n+.wk-key .wk-s1{background:#7a6aa8}.wk-n+.wk-key .wk-s2{background:#2b3156}
+.wk-master ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.wk-master li{display:inline-flex;align-items:center;gap:7px;background:var(--chip);border-radius:999px;padding:6px 13px 6px 6px;font-size:14px;font-weight:600}
+.wk-master li i{font-style:normal;display:grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--ink);color:var(--paper);font:800 11px/1 'Noto Sans KR',sans-serif}
+.wk-results{display:grid;gap:8px;margin-bottom:16px}
+.wk-res{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.4fr);gap:6px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--c,var(--ink));border-radius:12px;padding:12px 16px}
+.wk-r0{--c:#c99a3c}.wk-r1{--c:#6e8f4e}.wk-r2{--c:#7a6aa8}.wk-r3{--c:#d0662e}.wk-r4{--c:#b8322a}
+.wk-res b{font:800 17px/1.2 Hahmlet,serif;color:var(--c)}
+.wk-res span{font-size:14.5px}
+.wk-res small{font-size:13.5px;color:var(--ink2)}
+.wk-pay{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.wk-pay li{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--line);padding-top:6px;font-size:15px}
+.wk-pay li:first-child{border-top:0;padding-top:0}
+.wk-pay li b{display:inline!important;font:800 16px/1 Hahmlet,serif!important;margin:0!important;min-width:44px}
+.wk-pay li span{font-weight:700;color:var(--gold)}
+.wk-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;background-image:repeating-linear-gradient(180deg,transparent 0 31px,color-mix(in srgb,var(--line) 55%,transparent) 31px 32px)}
+.wk-lg-col{padding:18px 20px}
+.wk-lg-col+.wk-lg-col{border-left:2px solid color-mix(in srgb,var(--accent) 45%,var(--line))}
+.wk-lg-col em{display:inline-block;font-style:normal;font:800 13px/1 'Noto Sans KR',sans-serif;letter-spacing:.2em;color:var(--paper);background:var(--accent);border-radius:6px;padding:5px 10px;margin-bottom:12px}
+.wk-lg-col+.wk-lg-col em{background:#6e8f4e}
+.wk-lg-col p{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;margin:0 0 12px}
+.wk-lg-col p b{font:700 16px/1.3 Hahmlet,serif}
+.wk-lg-col p span{font:800 17px/1.3 Hahmlet,serif;color:var(--ink);text-align:right}
+.wk-lg-col p small{grid-column:1/-1;font-size:13px;color:var(--ink2)}
+.wk-sum{border-top:2px solid var(--ink);padding-top:10px;margin-top:4px!important}
+.wk-sum span{color:var(--accent)!important}
+.wk-lg-foot{grid-column:1/-1;padding:14px 20px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--chip) 60%,transparent);font-size:14.5px;color:var(--ink2)}
+.wk-lg-foot b{color:var(--ink)}
+.wk-promo{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.wk-promo span{display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--paper);border:1.5px solid var(--line)}
+.wk-promo span:first-child{border:2px solid var(--accent)}
+.wk-promo span b{font:800 26px/1 Hahmlet,serif}
+.wk-promo i{font-style:normal;font-size:13px;font-weight:700;color:var(--ink2);position:relative;padding:0 18px 0 0}
+.wk-promo i::after{content:"›";position:absolute;right:2px;top:-3px;font-size:18px;color:var(--accent)}
+.wk-sus{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.wk-sus li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+.wk-sn{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 8px;border-radius:50%;font:800 16px/1 Hahmlet,serif;color:var(--paper);background:color-mix(in srgb,var(--accent) calc(var(--k,0) * 1%),#9a7a58)}
+.wk-sus li:nth-child(1) .wk-sn{--k:0}.wk-sus li:nth-child(2) .wk-sn{--k:20}.wk-sus li:nth-child(3) .wk-sn{--k:40}.wk-sus li:nth-child(4) .wk-sn{--k:60}.wk-sus li:nth-child(5) .wk-sn{--k:80}.wk-sus li:nth-child(6) .wk-sn{--k:100}
+.wk-sus b{display:block;font:700 15px/1.25 Hahmlet,serif;margin-bottom:4px}
+.wk-sus p{margin:0;font-size:13px;color:var(--ink2)}
+.wk-lines{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.wk-line{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px}
+.wk-line b{font:700 17px/1.2 Hahmlet,serif}
+.wk-line p{margin:0;font-size:13.5px;color:var(--ink2);flex:1}
+.wk-line code{align-self:flex-start;font:700 12.5px/1.4 'Noto Sans KR',monospace;background:var(--chip);border-radius:6px;padding:3px 8px;color:var(--ink)}
+.wk-note{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.wk-note li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-top:4px solid #6b4226}
+.wk-note b{display:block;font:700 16px/1.25 Hahmlet,serif;margin-bottom:4px}
+.wk-note p{margin:0;font-size:14px;color:var(--ink2)}
+.wk-arc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.wk-arc h4{font:800 19px/1.2 Hahmlet,serif;margin:0 0 4px}
+.wk-open{margin:0 0 10px;font-size:14px;color:var(--ink2)}
+.wk-start{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.wk-start li{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border-radius:999px;padding:5px 14px 5px 5px;font-weight:700;font-size:14px}
+.wk-start i{font-style:normal;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font:800 12px/1 Hahmlet,serif}
+#work .card strong{color:var(--ink)}
+@media(max-width:980px){.wk-day{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-day li::after{display:none}.wk-sus{grid-template-columns:repeat(3,minmax(0,1fr))}.wk-lines{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-note{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.wk-res{grid-template-columns:1fr;gap:2px}.wk-ledger{grid-template-columns:1fr}.wk-lg-col+.wk-lg-col{border-left:0;border-top:2px solid color-mix(in srgb,var(--accent) 45%,var(--line))}.wk-sus{grid-template-columns:repeat(2,minmax(0,1fr))}.wk-lines,.wk-note{grid-template-columns:1fr}.wk-day{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap">
  <a class="mark" href="#intro" aria-label="맨 위로"><img src="img/logo.webp" alt="냥냥피스 해결사단" width="118" height="63"></a>
  <nav class="nav" aria-label="설정집 목차">
-  <a href="#intro">소개</a><a href="#world">세계</a><a href="#office">사무소</a><a href="#members">단원</a><a href="#regulars">단골</a><a href="#fixed">고정 NPC</a><a href="#truth">기밀</a><a href="#tags">NAI 태그</a>
+  <a href="#intro">소개</a><a href="#world">세계</a><a href="#office">사무소</a><a href="#work">업무</a><a href="#members">단원</a><a href="#regulars">단골</a><a href="#fixed">고정 NPC</a><a href="#truth">기밀</a><a href="#tags">NAI 태그</a>
  </nav>
 <div class="bgm" id="bgm">
   <button class="bgmbtn" id="bgmBtn" type="button" aria-label="테마곡 열기" aria-expanded="false" aria-controls="bgmPanel" title="테마곡"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
@@ -498,7 +592,7 @@ footer p{margin:0;font-size:14px;opacity:.85}
    <div class="floor"><b>1층</b><p>사무실과 접수창구, 아인의 부엌. 아치창 아래 책상이 표지 그림의 바로 그 책상이다.</p></div>
    <div class="floor"><b>2층</b><p>단원 숙소. 신입은 처음엔 출퇴근하는데, 빈방 하나를 두고 단원들이 서로 자기 옆방을 권하는 다툼이 있다.</p></div>
    <div class="floor"><b>마당</b><p>아인의 고물 마도차, 실베스터의 빨랫줄, 세리아의 장미 화분.</p></div>
-   <div class="floor"><b>재정</b><p>월세 3개월 체납. 황실 면세 덕분에 간신히 버틴다. 신입 월급은 약 200G, 장부는 실베스터가 쥐고 있다가 신입에게 넘기려고 호시탐탐 노린다.</p></div>
+   <div class="floor"><b>재정</b><p>월세는 한 달 300G, 이미 3개월이 밀렸다. 황실 면세와 사장님 하숙비 할인 덕분에 간신히 버틴다. 신입 월급은 약 200G, 장부는 실베스터가 쥐고 있다가 신입에게 넘기려고 호시탐탐 노린다. <a href="#work" style="color:var(--accent);font-weight:700">가계부 보기 ›</a></p></div>
   </div>
   <div class="boss">
    <h3>사무소 고양이 '사장님'</h3>
@@ -509,7 +603,73 @@ footer p{margin:0;font-size:14px;opacity:.85}
  </div>
 </div></section>
 
-<section class="band alt" id="members"><div class="wrap">
+<section class="band alt" id="work"><div class="wrap">
+ <div class="folder"><span class="tab"><i></i>업무 일지</span><div class="face2">
+  <h2>냥냥피스의 하루</h2>
+  <p>의뢰가 이 시뮬의 메인 콘텐츠다. 모든 의뢰는 웃기거나, 설레거나, 이야기가 있거나, 셋 중 하나는 반드시 챙긴다. 들키지 않으려는 노력이 클수록 상황은 더 이상해진다.</p>
+ </div></div>
+
+ <div class="wk-grp"><h3>하루 일과</h3><p>일요일은 쉬는 날(장보기, 축제, 대청소), 월말에는 월세. 기념제나 승급 심사 주간에는 의뢰판이 행사 의뢰로 채워진다.</p>
+  <ol class="wk-day"><li><span class="wk-t">아침</span><b>의뢰판 도착</b><p>마도단말기로 쪽지 세 장이 들어온다. 맡을 의뢰와 데려갈 선배를 고른다.</p></li><li><span class="wk-t">낮</span><b>의뢰 하나</b><p>하루에 의뢰는 하나. 현장에서 반전이 터지고, 마지막 한 수는 신입의 몫이다.</p></li><li><span class="wk-t">저녁</span><b>사무소 생활</b><p>아인의 밥, 실베스터의 잔소리, 레온의 귤, 서류 위의 사장님. 관계는 여기서 깊어진다.</p></li><li><span class="wk-t">밤</span><b>밤의 얼굴</b><p>선배 하나가 슬쩍 나가고, 먼 골목의 파수등이 깜빡이고, 비밀방이 시끄러워진다.</p></li></ol></div>
+
+ <div class="wk-grp"><h3>아침 의뢰판</h3><p>매일 아침 쪽지 세 장. 게시판에는 한 줄짜리 겉 제목만 적혀 있고, 진짜 사정은 현장에서 드러난다.</p>
+  <div class="grid g3 wk-slips"><div class="wk-slip"><span class="wk-pin"></span><em>①</em><b>관리청</b><p>살구골목 출장소의 제롬이 보내는 정식 의뢰. 대부분 F~E급이고, 가끔 깐깐한 메모가 붙는다.</p></div><div class="wk-slip"><span class="wk-pin"></span><em>②</em><b>방문</b><p>사무소 문을 두드리는 손님. 3코퍼를 내미는 꼬마부터 가면 쓴 수상한 손님까지, 의뢰인 유형만 스무 가지.</p></div><div class="wk-slip"><span class="wk-pin"></span><em>③</em><b>쪽지 · 지명 · 단골</b><p>단골과 고정 NPC의 부탁, 진행 중인 연작의 다음 화, 그리고 F급에 올 리 없는 지명 의뢰.</p></div></div>
+  <div class="grid g2 wk-odds">
+   <div class="card"><b>쪽지 등급</b><div class="wk-bar wk-g"><span class="wk-seg wk-s0" style="--w:45"><b>F</b><em>45%</em></span><span class="wk-seg wk-s1" style="--w:30"><b>E</b><em>30%</em></span><span class="wk-seg wk-s2" style="--w:14"><b>D</b><em>14%</em></span><span class="wk-seg wk-s3" style="--w:8"><b>C</b><em>8%</em></span><span class="wk-seg wk-s4" style="--w:3"><b>지명</b><em>3%</em></span></div><ul class="wk-key"><li><i class="wk-s0"></i><b>F</b>동네 심부름</li><li><i class="wk-s1"></i><b>E</b>조금 수상한 동네 일</li><li><i class="wk-s2"></i><b>D</b>사건의 시작</li><li><i class="wk-s3"></i><b>C</b>제법 큰 사건</li><li><i class="wk-s4"></i><b>지명</b>B급 이상</li></ul><p class="wk-fine">승급하면 확률이 한 칸씩 위로 밀린다.</p></div>
+   <div class="card"><b>의뢰 성격</b><div class="wk-bar wk-n"><span class="wk-seg wk-s0" style="--w:70"><b>일상극</b><em>70%</em></span><span class="wk-seg wk-s1" style="--w:20"><b>떡밥 한 스푼</b><em>20%</em></span><span class="wk-seg wk-s2" style="--w:10"><b>진실 회차</b><em>10%</em></span></div><ul class="wk-key"><li><i class="wk-s0"></i><b>일상극</b>웃기거나 설레는 단편. 의심도는 그대로</li><li><i class="wk-s1"></i><b>떡밥 한 스푼</b>선배 하나의 이상한 점이 한 번 스친다</li><li><i class="wk-s2"></i><b>진실 회차</b>연작의 한 화, 또는 진실의 층 하나</li></ul><p class="wk-fine">무거운 날 다음에는 가벼운 날. 진실 회차는 이틀 연속 오지 않는다.</p></div>
+  </div>
+  <div class="card wk-master"><b>명작 의뢰</b><p>쪽지 여섯 장 중 한 장꼴로, 하루 최대 한 장. 오타쿠가 좋아하는 바로 그 전개들이다.</p><ul><li><i>F</i>사랑의 묘약 오배송</li><li><i>E</i>러브러브 커플 달걀 테러범</li><li><i>E</i>신입을 지목한 맞선</li><li><i>E</i>가짜 연인</li><li><i>E</i>엄마, 아빠!</li><li><i>E</i>자선 데이트 경매</li><li><i>E</i>고양이 귀 저주</li><li><i>E</i>연애소설가의 취재</li><li><i>E</i>몸이 바뀌었어요</li><li><i>E</i>이상형 거울</li><li><i>D</i>사랑해야 열리는 던전</li><li><i>D</i>끝내야 나올 수 있는 동화책</li><li><i>D</i>대타 아이돌 무대</li><li><i>D</i>유령 저택의 하룻밤</li><li><i>C</i>여학원 테러 예고장</li></ul></div>
+ </div>
+
+ <div class="wk-grp"><h3>누구와 갈까</h3><p>위험해 보이는 쪽지가 오면 선배들이 서로 가겠다고 다툰다. 정하는 건 신입이다.</p>
+  <div class="grid g3"><div class="card"><b>한 명</b><p>기본이자 가장 설레는 선택. 단둘이 남는 시간이 길다.</p></div><div class="card"><b>두 명</b><p>티격태격과 질투가 붙는다. 대신 한 명은 꼭 잠깐 자리를 비운다.</p></div><div class="card"><b>혼자</b><p>선배들이 몰래 미행한다. 미행을 들키는 순간이 그날의 사건이 된다.</p></div></div></div>
+
+ <div class="wk-grp"><h3>결과와 보수</h3><p>실패도 재미있어야 한다. 대참사는 벌이 아니라 사건이다.</p>
+  <div class="wk-results"><div class="wk-res wk-r0"><b>대성공</b><span>반전까지 해결하고 은폐도 완벽</span><small>보수 + 팁 · 실적 2 · 의뢰인이 단골이 되기도</small></div><div class="wk-res wk-r1"><b>성공</b><span>목표 달성</span><small>보수 · 실적 1</small></div><div class="wk-res wk-r2"><b>수상한 성공</b><span>너무 빠르거나 너무 완벽함</span><small>보수 · 실적 1 · 의심도 +1 · 노엘 통계표 +1 · 다음 날 호외 후보</small></div><div class="wk-res wk-r3"><b>웃긴 실패</b><span>목표는 놓쳤지만 동네가 즐거웠다</span><small>보수 절반 또는 물품 · "냥냥피스가 또…" 소문</small></div><div class="wk-res wk-r4"><b>대참사</b><span>뒷수습이 의뢰보다 커졌다</span><small>보수 없음 · 배상금 가능 · 몇 주 뒤에도 회자되는 동네 전설</small></div></div>
+  <div class="grid g2 wk-paywrap">
+   <div class="card"><b>등급별 보수</b><ul class="wk-pay"><li><b>F</b><span>1 ~ 10G</span></li><li><b>E</b><span>10 ~ 30G</span></li><li><b>D</b><span>30 ~ 80G</span></li><li><b>C</b><span>80 ~ 200G</span></li><li><b>지명</b><span>200G 이상</span></li></ul></div>
+   <div class="card"><b>이상한 보수</b><p>3코퍼와 사탕, 손뜨개 목도리, 평생 무료 빵, 앵무새, 출처 모를 지도, 용 비늘, 귀족의 차용증, 황실 인장이 찍힌 백지수표, 정령의 축복. 전부 장부에 물품으로 오르고, 다음 이야기의 씨앗이 되기도 한다.</p></div>
+  </div></div>
+
+ <div class="wk-grp"><h3>사무소 재정</h3><p>버는 만큼 나가는 사무소. 대참사 한 번이면 그달 말이 위험해진다.</p>
+  <div class="wk-ledger">
+   <div class="wk-lg-col"><em>지출</em>
+    <p><b>월세</b><span>300G</span><small>매달 30일, 건물주 마르타 할머니가 직접 받으러 온다</small></p>
+    <p><b>식비 · 잡비</b><span>주 100G</span><small>매주 월요일 아인의 장보기. 한 달이면 약 400G</small></p>
+    <p class="wk-sum"><b>한 달 고정 지출</b><span>약 700G</span></p></div>
+   <div class="wk-lg-col"><em>수입</em>
+    <p><b>의뢰 보수</b><span>월 600 ~ 700G</span><small>평범하게 일하면 이 정도. 늘 아슬아슬하다</small></p>
+    <p><b>신입 월급</b><span>약 200G</span><small>월세 사정에 따라 조금 늦을 수 있다</small></p>
+    <p><b>숨은 버팀목</b><span>면세</span><small>황실 면세와 사장님 하숙비 할인</small></p></div>
+   <div class="wk-lg-foot">월세가 모자라면 마르타 할머니가 <b>「월세 대신 집수리」</b> 쪽지를 내민다. 선배들의 개인 지출(레온의 낮잠 쿠션, 실베스터의 책, 카일의 고급 찻잎)도 늘 월세를 위협한다. 장부를 맡으면 가끔 이상한 금액이 눈에 띈다.</div>
+  </div></div>
+
+ <div class="wk-grp"><h3>승급</h3><p>누적 실적이 차면 승급 심사가 열린다. 심사관은 노엘, 심사에는 마력 측정이 들어 있고, 심사 의뢰에는 반전 카드가 한 장 더 붙는다. <span class="d-only">이상하게도 선배들은 심사 날마다 컨디션이 나쁘다.</span><span class="n-only">심사를 통과하면 정체가 드러나니, 선배들은 몰래 승급을 망친다. 월급을 올리고 싶은 신입과는 정반대다.</span></p>
+  <div class="wk-promo"><span><b>F</b></span><i>실적 10</i><span><b>E</b></span><i>실적 25</i><span><b>D</b></span><i>실적 50</i><span><b>C</b></span></div></div>
+
+ <div class="wk-grp"><h3>의심도</h3><p>신입이 얼마나 눈치챘는지, 선배마다 따로 쌓인다. 5단계는 그 선배가 이미 4단계일 때, 연작의 절정이나 단둘이 있을 때 직접 물어볼 때만 열린다.</p>
+  <ol class="wk-sus"><li><span class="wk-sn">0</span><b>평범한 동료</b><p>아무것도 모른다.</p></li><li><span class="wk-sn">1</span><b>작은 위화감</b><p>"방금 그거… 운이 좋았던 거죠?"</p></li><li><span class="wk-sn">2</span><b>반복되는 우연</b><p>같은 종류의 이상한 일이 두 번째로 일어난다.</p></li><li><span class="wk-sn">3</span><b>목격한 증거</b><p>숨기지 못한 한 순간을 봤다. 빛나는 눈, 비늘, 정령.</p></li><li><span class="wk-sn">4</span><b>확신</b><p>혼자 결론을 내렸지만 아직 말하지 않았다.</p></li><li><span class="wk-sn">5</span><b>고백</b><p>선배가 직접 정체를 밝힌다.</p></li></ol>
+  <p class="wk-fine" style="margin-top:12px">선배들도 눈치를 챈다. 3단계부터 레온은 일부러 더 게을러지고, 카일은 말수가 줄고, 세리아는 더 대놓고 놀린다.</p>
+  <h4 class="wk-h4">사무소 경계</h4><div class="grid g3"><div class="card"><b>노엘 통계표</b><p>수상한 성공이 세 번 쌓이면 관리청 특별감사관의 불시 감사.</p></div><div class="card"><b>솔레인 석간 호외</b><p>수상한 성공이나 대참사 다음 날 아침, 게시판에 호외가 붙는다.</p></div><div class="card"><b>파수등</b><p>큰 힘을 쓰면 골목 파수등이 깜빡인다. 세 번이면 관리청 조사반 출동.</p></div></div></div>
+
+ <div class="wk-grp"><h3>연락 수단</h3><p>사무소 공용 마도단말기로 오가는 것들. 신입도 아래 형식으로 직접 보낼 수 있다.</p>
+  <div class="wk-lines"><div class="wk-line"><b>전언</b><p>1:1 메시지. 선배마다 말풍선 색과 말투가 다르다.</p><code>[전언→이름] 내용</code></div><div class="wk-line"><b>전언방</b><p>사무소 단체방. 방 이름은 대체로 사장님이 바꾼다.</p><code>[전언방→] 내용</code></div><div class="wk-line"><b>비밀방</b><p>신입이 빠진 선배들만의 방. 가끔 화면 너머로 엿보게 된다.</p></div><div class="wk-line"><b>우편함</b><p>편지 · 쪽지 · 공문. 건물주 공문에는 발바닥 도장이 찍힌다.</p></div><div class="wk-line"><b>호외</b><p>『솔레인 석간』과 살구골목 소식지. 동네가 무엇을 봤는지 알 수 있다.</p></div></div></div>
+
+ <div class="wk-grp"><h3>업무 수첩</h3><p>매 답변 끝에 붙는 가죽 수첩. 접혀 있을 때는 날짜와 금고만, 펼치면 전부 보인다.</p>
+  <ul class="wk-note"><li><b>날짜 · 시간대 · 날씨 · 장소</b><p>아침·낮·저녁·밤·새벽. 밤이 되면 수첩도 남색으로 바뀐다.</p></li><li><b>금고 · 월세 D-day</b><p>D-3부터 빨갛게 깜빡인다. 금고가 마이너스면 적자 경보.</p></li><li><b>오늘의 의뢰</b><p>등급, 동행, 접수부터 보고까지 여섯 단계, 연작 회차.</p></li><li><b>장부</b><p>실적 게이지, 노엘 통계표 세 칸, 파수등 세 개.</p></li><li><b>의심도</b><p>선배 여섯의 메달과 단계 이름.</p></li><li><b>신입 사진</b><p>이미지 주소를 등록하면 신분증과 수첩에 내 사진이 뜬다. 채팅마다 따로 저장된다.</p></li></ul></div>
+
+ <div class="wk-grp"><h3>연작 의뢰</h3><p>평범한 의뢰가 알고 보니 큰 이야기의 1화였다. 아침 의뢰판의 세 번째 쪽지로만 들어오고, 일주일에 한 화씩, 동시에 두 개까지 진행된다.</p>
+  <div class="grid g2 wk-arcs"><div class="wk-arc"><h4>「사라진 사람들」</h4><p class="wk-open">C급 「뒷골목 연쇄 실종」 또는 반전 카드로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>실종 → 지나치게 친절한 자선단체 → 토비아스와의 대치 → 그레고르의 편지 → 백야 10주년 기념제</p></div><div><b>열리는 것</b><p>백야의 진실, 실베스터의 정체</p></div></div></div></div></div><div class="wk-arc"><h4>「릴리의 약」</h4><p class="wk-open">돈 카를로스의 첫 의뢰로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>약 구하기 → 광산 마을 → 흑요탑 연구소 잠입 → 드미트리의 장부</p></div><div><b>열리는 것</b><p>마석병의 원인, 마석의 진실 일부</p></div></div></div></div></div><div class="wk-arc"><h4>「정령왕을 찾습니다」</h4><p class="wk-open">시엘의 수색 의뢰로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>합동 수색 → 폭주 정령 → 진실에 다가서는 시엘 → 세리아의 선택</p></div><div><b>열리는 것</b><p>세리아가 정령왕 세리안</p></div></div></div></div></div><div class="wk-arc"><h4>「마지막 용사냥꾼」</h4><p class="wk-open">D급 「금화거리 → 루센 항구 호송」으로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>용 비늘 호송 → 밀수꾼 추적 → 볼프강과 유적행 → 가문의 마지막 기록</p></div><div><b>열리는 것</b><p>카일이 마지막 흑룡</p></div></div></div></div></div><div class="wk-arc"><h4>「감사관의 47.3배」</h4><p class="wk-open">노엘의 불시 감사로 시작, 항상 진행 중</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>감사 → 검증 의뢰 → 승급 심사 사보타주 → 노엘 아버지의 진실</p></div><div><b>열리는 것</b><p>노엘과 실베스터의 거울 관계</p></div></div></div></div></div><div class="wk-arc"><h4>「마왕님의 결재」</h4><p class="wk-open">스톨라스의 서류 배달로 시작 · 첫 주에 열림</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>서류 배달 → 벨리알의 불시착과 청혼 → 포털 사고 → 바르바토스의 위협</p></div><div><b>열리는 것</b><p>레온이 전대 마왕</p></div></div></div></div></div><div class="wk-arc"><h4>「황태자의 가출 일지」</h4><p class="wk-open">테오의 가짜 의뢰로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>첫 가출 → 두 번째 가출 → 보물찾기 → 테오가 황궁에 남을 이유를 찾는다</p></div><div><b>열리는 것</b><p>진실 층 없음 · 성장 이야기</p></div></div></div></div></div><div class="wk-arc"><h4>「신입 쟁탈전」</h4><p class="wk-open">오리온의 스카우트로 시작</p><div class="sp"><button class="veil" type="button" data-veil>스포일러 · 눌러서 열기<small>플레이 중 드러나는 내용이에요</small></button><div class="sp-in"><div class="spl"><div><b>흐름</b><p>마탑 스카우트 → 라울의 영입 제안 → 가브리엘의 입단 제안 → 신입 이적 위기</p></div><div><b>열리는 것</b><p>진실 층 없음 · 선배들이 신입을 붙잡는 방식</p></div></div></div></div></div></div></div>
+
+ <div class="wk-grp"><h3>처음 시작할 때</h3>
+  <div class="grid g2">
+   <div class="card"><b>첫 메시지</b><p>첫 화면은 살구골목 게시판의 채용 공고. 입사 지원서를 채워 보내거나, 옆으로 넘겨 출근부를 고른다.</p>
+    <ul class="wk-start"><li><i>01</i>면접날</li><li><i>02</i>첫 출근 아침</li><li><i>00</i>자유 시작</li></ul></div>
+   <div class="card"><b>함께 쓰는 것</b><p>카드에 월드인포와 정규식이 들어 있고, QR 세트(의뢰판 · 전언함 · 우편함 · 시간 넘기기 · 사진 설정)를 함께 쓴다.</p></div>
+  </div></div>
+</div></section>
+
+<section class="band" id="members"><div class="wrap">
  <div class="folder"><span class="tab"><i></i>단원 명부</span><div class="face2">
   <h2>냥냥피스 단원 여섯</h2>
   <p class="d-only">한심한 선배들이다. 카드를 누르면 인사기록이 펼쳐진다. 위쪽의 '밤의 얼굴'로 바꾸면 그들이 숨기는 쪽이 보인다.</p>
@@ -520,7 +680,7 @@ footer p{margin:0;font-size:14px;opacity:.85}
  <div class="rels" id="rels"></div>
 </div></section>
 
-<section class="band" id="regulars"><div class="wrap">
+<section class="band alt" id="regulars"><div class="wrap">
  <div class="folder"><span class="tab"><i></i>단골</span><div class="face2">
   <h2>단골 NPC 열 명</h2>
   <p>자주 드나들며 사무소의 일상과 사건을 함께 굴리는 사람들. 처음엔 모두 당신과 모르는 사이다. 마르타 할머니만 빼고.</p>
@@ -528,7 +688,7 @@ footer p{margin:0;font-size:14px;opacity:.85}
  <div class="people" id="reg"></div>
 </div></section>
 
-<section class="band alt" id="fixed"><div class="wrap">
+<section class="band" id="fixed"><div class="wrap">
  <div class="folder"><span class="tab"><i></i>세력의 얼굴</span><div class="face2">
   <h2>고정 NPC 열세 명</h2>
   <p>단골보다 덜 자주 나오지만, 의뢰가 들어올 때 "누가 보냈는가"를 구체적으로 만드는 세력의 얼굴들. 단원마다 자기 과거와 얽힌 인물이 적어도 한 명씩 있다.</p>
@@ -536,7 +696,7 @@ footer p{margin:0;font-size:14px;opacity:.85}
  <div id="fix"></div>
 </div></section>
 
-<section class="band" id="tags"><div class="wrap">
+<section class="band alt" id="tags"><div class="wrap">
  <div class="folder"><span class="tab"><i></i>NAI 태그</span><div class="face2">
   <h2>이미지 태그 복사함</h2>
   <p>버튼을 누르면 캐릭터의 외형 태그가 통째로 복사된다. 바스트 세트에는 상반신 외형만 담았다.</p>
